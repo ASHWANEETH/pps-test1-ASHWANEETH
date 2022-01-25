@@ -1,0 +1,112 @@
+ 
+ gcc -g p4final.c
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x889: file p4final.c, line 31.
+(gdb) r
+Starting program: /home/runner/pps-test1-ASHWANEETH-6/a.out 
+warning: Error disabling address space randomization: Operation not permitted
+
+Breakpoint 1, main () at p4final.c:31
+31    a = input();
+(gdb) s
+input () at p4final.c:3
+3   {
+(gdb) n
+5     printf("Enter a number\n");
+(gdb) n
+Enter a number
+6     scanf("%d",&a);
+(gdb) n
+2
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p4final.c:32
+32    b = input();
+(gdb) s
+input () at p4final.c:3
+3   {
+(gdb) n
+5     printf("Enter a number\n");
+(gdb) n
+Enter a number
+6     scanf("%d",&a);
+(gdb) n
+3
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p4final.c:33
+33    c = input();
+(gdb) s
+input () at p4final.c:3
+3   {
+(gdb) n
+5     printf("Enter a number\n");
+(gdb) n
+Enter a number
+6     scanf("%d",&a);
+(gdb) n
+4
+7     return a;
+(gdb) n
+8   }
+(gdb) n
+main () at p4final.c:34
+34    large = cmp(a,b,c);
+(gdb) s
+cmp (a=2, b=3, c=4) at p4final.c:11
+11    if (a>b && a>c)
+(gdb) n
+13    if (b>a && b>c)
+(gdb) n
+15    if (c>a && c>b)
+(gdb) n
+16    return 3;
+(gdb) n
+17  }
+(gdb) n
+main () at p4final.c:35
+35    output(a,b,c,large);
+(gdb) s
+output (a=2, b=3, c=4, largest=3) at p4final.c:20
+20   if(largest == 1)
+(gdb) n
+22   else if(largest == 2)
+(gdb) n
+24   else if(largest == 3)
+(gdb) n
+25      printf("The largest number is %d\n",c);
+(gdb) n
+The largest number is 4
+26  }
+(gdb) n
+main () at p4final.c:36
+36    return 0;
+(gdb) n
+37  }
+(gdb) n
+__libc_start_main (main=0x556e5b800881 <main>, argc=1, argv=0x7fff47e30fb8, 
+    init=<optimized out>, fini=<optimized out>, rtld_fini=<optimized out>, 
+    stack_end=0x7fff47e30fa8) at ../csu/libc-start.c:344
+344 ../csu/libc-start.c: No such file or directory.
+(gdb) Quit
+(gdb) 
