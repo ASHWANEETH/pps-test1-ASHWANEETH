@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int input()
+int input_n()
 {
   int n;
   printf("Enter the number of terms to be added\n");
@@ -11,7 +11,7 @@ int input()
 int sum_n(int n)
 {
   int sum = 0;
-  for(int i = 0;i < n;i++)
+  for(int i = 0;i <= n;i++)
   {
     sum = sum + i;
   }
@@ -26,7 +26,7 @@ void output(int n,int sum)
 int main()
 {
   int n,sum;
-  n = input();
+  n = input_n();
   sum = sum_n(n);
   output(n,sum);
   return 0;
