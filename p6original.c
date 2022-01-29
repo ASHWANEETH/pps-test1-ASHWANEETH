@@ -3,15 +3,15 @@
 int input()
 {
   int n;
-  printf("Enter the number\n");
+  printf("Enter the number of terms to be added\n");
   scanf("%d",&n);
   return n;
 }
 
 int sum_n(int n)
 {
-  int sum;
-  for(int i = 0;i<n;i++)
+  int sum = 0;
+  for(int i = 0;i < n;i++)
   {
     sum = sum + i;
   }
@@ -20,7 +20,7 @@ int sum_n(int n)
 
 void output(int n,int sum)
 {
-  printf("The sum of the numbers is %d\n",sum);
+  printf("The sum of the %d numbers is %d\n",n,sum);
 }
 
 int main()
